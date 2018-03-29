@@ -1,3 +1,5 @@
-s.o:Server.c
-	gcc -c Server.c -o s.o
-	mv s.o ../../obj/server/
+all:main.o
+	make -C init
+main.o:main.c
+	gcc -c main.c -o main.o -I ../../include/ 
+	mv main.o ../../obj/server/ 
