@@ -1,0 +1,24 @@
+测试用例：
+
+1. log存储功能测试
+	在正常启动server和板卡apk的情况下，通过adb命令 adb pull /data/log.txt 下载logcat到本地，然后在server本地
+	使用cat logcat.txt查看存储的logcat将两者内容做对比，测试log抓取与存储的准确性，测试其他相关log类似。
+
+	测试内容		server测试				client测试				测试结果
+	logcat			cat logcat.txt			adb pull /data/log.txt			一致
+	traces			cat traces.txt			adb pull /data/anr/traces.txt		一致
+	tombstone		cat tombstone.txt		adb pull /data/tombstones/tombstone	一致
+	event-log		cat event-log.txt		adb pull /etc/event-log-tags		一致
+
+2. 反馈调试功能测试
+	在正常启动server和板卡apk的情况下，在server终端直接输入 ls -l 、cat /proc/meminfo等命令，然后通过adb输入
+	相同的命令，将两者内容做对比，测试反馈命令调试的准确性，执行其他反馈命令类似。
+
+	测试内容			server测试				client测试				测试结果
+	ls -l			ls -l					adb shell ls -l				显示一致
+	cat /proc/meminfo	cat /proc/meminfo		adb shell cat /proc/meminfo			显示一致
+		
+功能测试结果：
+	功能	  实现
+	log存储    √
+	反馈调试   √
