@@ -333,6 +333,5 @@ public class LogActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 }
 
