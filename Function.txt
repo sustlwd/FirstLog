@@ -1,0 +1,6 @@
+项目功能描述：
+1. log存储
+	Android apk抓取板卡运行期间的相关log信息，上传到server本地存储。log信息包含logcat、traces、tombstones、event-log-tags、
+	kernel-msg（抓取kmsg需要系统应用签名）等，同时附带测试板卡的处理器型号以及软件版本信息。
+2. 反馈调试
+	server和板卡apk实现双向通信，server可以向板卡发送调试命令，板卡执行命令并将执行结果返回到server终端显示。
