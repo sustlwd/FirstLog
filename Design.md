@@ -1,6 +1,6 @@
 ﻿#  项目设计文档
 ## 项目名称
-	Android系统log存储
+        	Android系统log存储
 ## 项目框架
 1. 项目平台
 	+ 使用Android系统的TV板卡进行开发测试客户端
